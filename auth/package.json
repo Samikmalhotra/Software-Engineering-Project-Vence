@@ -27,6 +27,9 @@
   "@samikmalhotra/microservices-helper": "^1.0.7",
   
     
+  "bcrypt": "^5.0.1",
+  
+    
   "cookie-session": "^1.4.0",
   
     
