@@ -1,17 +1,39 @@
 {
   
   "name": "auth",
+  
   "version": "1.0.0",
+  
   "main": "index.js",
-  "devDependencies": {},
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  
+    
+  "test": "echo \"Error: no test specified\" && exit 1"
+  
   },
+  
   "keywords": [],
+  
   "author": "",
+  
   "license": "ISC",
+  
   "description": "",
+  
   "dependencies": {
-    "ts-node-dev": "^1.1.8"
+  
+    
+  "@samikmalhotra/microservices-helper": "^1.0.7",
+  
+    
+  "express": "^4.17.1",
+  
+    
+  "mongoose": "^6.0.12",
+  
+    
+  "ts-node-dev": "^1.1.8"
+  
   }
 }
