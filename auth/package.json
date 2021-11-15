@@ -27,7 +27,13 @@
   "@samikmalhotra/microservices-helper": "^1.0.7",
   
     
+  "cookie-session": "^1.4.0",
+  
+    
   "express": "^4.17.1",
+  
+    
+  "express-async-handler": "^1.2.0",
   
     
   "mongoose": "^6.0.12",
