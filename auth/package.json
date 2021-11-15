@@ -42,6 +42,12 @@
   "express-async-handler": "^1.2.0",
   
     
+  "express-validator": "^6.13.0",
+  
+    
+  "jsonwebtoken": "^8.5.1",
+  
+    
   "mongoose": "^6.0.12",
   
     
