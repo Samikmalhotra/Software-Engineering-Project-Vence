@@ -3,9 +3,9 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const connectDB = async () => {
-  console.log(process.env.MONGO_URI)
+  // console.log(process.env.MONGO_URI)
   try {
-    const conn = await mongoose.connect("mongodb+srv://user:user@cluster0.877ii.mongodb.net/project-zeus?retryWrites=true&w=majority", {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       // useCreateIndex: true,
