@@ -5,7 +5,7 @@ import connectDB from './config/db.js'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
 dotenv.config()
-// import userRoutes from './routes/userRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 
 
 connectDB()
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(express.json())
 
 //   app.use('/api/products', productRoutes)
-//   app.use('/api/users', userRoutes)
+  app.use('/api/users', userRoutes)
 //   app.use('/api/orders', orderRoutes)
 //   app.use('/api/upload', uploadRoutes)
 
