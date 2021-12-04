@@ -1,17 +1,18 @@
+import path from 'path';
 import mongoose from 'mongoose'
 import bcrypt from 'bcryptjs'
-// import shopSchema, { Shop } from './shopModel'
+// import { shopSchema } from './shopModel'
 
-const shopSchema = new mongoose.Schema({
-  name: {
-      type: String,
-      required: true,
-  },
-  location: {
-      type: String,
-      required: true,
-  }
-})
+// const shopSchema = new mongoose.Schema({
+//   name: {
+//       type: String,
+//       required: true,
+//   },
+//   location: {
+//       type: String,
+//       required: true,
+//   }
+// })
 
 const userSchema = mongoose.Schema(
     {
@@ -33,7 +34,7 @@ const userSchema = mongoose.Schema(
           required: true,
           default: false,
         },
-        shops: [shopSchema]
+        // shops: [shopSchema]
       },
       {
         timestamps: true,
@@ -53,5 +54,5 @@ userSchema.pre('save', async function (next) {
   })
   
 const User = mongoose.model('User', userSchema)
-  
+// const Shop = mongoose.model('Shop', shopSchema)
 export default User
