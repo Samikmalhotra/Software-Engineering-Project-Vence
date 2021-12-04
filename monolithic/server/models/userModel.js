@@ -1,5 +1,17 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcryptjs'
+// import shopSchema, { Shop } from './shopModel'
+
+const shopSchema = new mongoose.Schema({
+  name: {
+      type: String,
+      required: true,
+  },
+  location: {
+      type: String,
+      required: true,
+  }
+})
 
 const userSchema = mongoose.Schema(
     {
@@ -21,6 +33,7 @@ const userSchema = mongoose.Schema(
           required: true,
           default: false,
         },
+        shops: [shopSchema]
       },
       {
         timestamps: true,
