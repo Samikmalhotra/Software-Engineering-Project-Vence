@@ -1,6 +1,7 @@
 import mongoose, { mongo } from 'mongoose'
 
-const transactionSchema = {
+const transactionSchema = mongoose.Schema(
+    {
     shop: {
         type: mongoose.Types.ObjectId,
         required: true,
@@ -25,12 +26,28 @@ const transactionSchema = {
                 type: mongoose.Schema.Types.ObjectId,
                 required: true,
                 ref: 'Product',
-            },
-
+            }
         }
-    ]
+    ],
+    taxPrice: {
+        type: Number,
+        required: true,
+        default: 0.0,
+    },
+    totalPrice: {
+        type: Number,
+        required: true,
+        default: 0.0,
+    },
+    paymentMethod: {
+        type: String,
+        required: true,
+    }
+},
+    {
+        timestamps: true
+    }
+)
 
-
-
-
-}
+const Transaction = mongoose.model('Transaction', transactionSchema)
+export default Transaction
