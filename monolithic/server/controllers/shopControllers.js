@@ -23,6 +23,24 @@ const getShopById = asyncHandler(async (req,res) => {
 // @route   POST /api/shops
 // @acess   Private
 const createShop = asyncHandler(async(req,res)=>{
+    const {name, location} = req.body
+
+    const shopExists = await Shop.findOne({name: name})
+
+    if(shopExists){
+        res.status(400)
+        throw new Error('shop already exists')
+    }
+
+    const shop = new Shop({
+        user: req.user.id,
+        name: name,
+        location: location
+    })
+
+    await shop.save()
+
+    res.status(401).json(shop)
 
 })
 
