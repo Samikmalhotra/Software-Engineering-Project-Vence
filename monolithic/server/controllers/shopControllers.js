@@ -19,10 +19,17 @@ const getShopById = asyncHandler(async (req,res) => {
     res.status(200).json(shop)
 })
 
+// @desc    Create a new shop
+// @route   POST /api/shops
+// @acess   Private
+const createShop = asyncHandler(async(req,res)=>{
+
+})
+
 // @desc    Update shop
 // @route   PUT /api/shops/:id
 // @acess   Private/Admin
-const updateUser = asyncHandler(async (req,res) => {
+const updateShop = asyncHandler(async (req,res) => {
     const shop = await Shop.findById(req.params.id)
 
     if(shop ){
@@ -58,4 +65,4 @@ const deleteShop = asyncHandler(async (req,res) => {
     }
     res.json(shop)
 })
-export {authUser,registerUser, getUserProfile, updateUserProfile, getUsers, deleteUser, getUserById, updateUser}
+export {getShops,getShopById,updateShop,deleteShop, createShop}
