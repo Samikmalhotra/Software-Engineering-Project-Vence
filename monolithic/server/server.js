@@ -1,6 +1,6 @@
 import path from 'path'
 import express from 'express'
-// import { notFound, errorHandler } from './middlewares/errorMiddlewares'
+import { notFound, errorHandler } from './middlewares/errorMiddlewares.js'
 import connectDB from './config/db.js'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
@@ -9,6 +9,7 @@ import userRoutes from './routes/userRoutes.js'
 import shopRoutes from './routes/shopRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 import transactionRoutes from './routes/transactionRoutes.js'
+import uploadRoutes from './routes/uploadRoutes.js'
 
 connectDB()
 
@@ -24,13 +25,13 @@ if (process.env.NODE_ENV === 'development') {
   app.use('/api/users', userRoutes)
   app.use('/api/shops', shopRoutes)
   app.use('/api/transactions', transactionRoutes)
-//   app.use('/api/upload', uploadRoutes)
+  app.use('/api/upload', uploadRoutes)
 
-    // const __dirname = path.resolve()
-    // app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
+    const __dirname = path.resolve()
+    app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
 
-// app.use(notFound)
-// app.use(errorHandler)
+app.use(notFound)
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
 
