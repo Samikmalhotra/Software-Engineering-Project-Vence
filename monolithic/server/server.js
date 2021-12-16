@@ -8,7 +8,7 @@ dotenv.config()
 import userRoutes from './routes/userRoutes.js'
 import shopRoutes from './routes/shopRoutes.js'
 import productRoutes from './routes/productRoutes.js'
-
+import transactionRoutes from './routes/transactionRoutes.js'
 
 connectDB()
 
@@ -23,6 +23,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use('/api/products', productRoutes)
   app.use('/api/users', userRoutes)
   app.use('/api/shops', shopRoutes)
+  app.use('/api/transactions', transactionRoutes)
 //   app.use('/api/upload', uploadRoutes)
 
     // const __dirname = path.resolve()
