@@ -1,8 +1,8 @@
-import mongoose, { mongo, Mongoose } from 'mongoose'
+import mongoose from 'mongoose'
 
 const productSchema = mongoose.Schema({ 
     shop: {
-        type: Mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Shop'
     },
