@@ -5,6 +5,6 @@ import {addTransactionItems, getTransactionById, getTransactions} from '../contr
 
 router.route('/').post(protect, admin, addTransactionItems).get(protect, admin, getTransactions)
 router.route('/:id').get(protect, admin, getTransactionById)
-
+router.route('/shop/:id').get(protect, admin, getTransactions)
 
 export default router

@@ -47,6 +47,19 @@ const getTransactionById = asyncHandler(async (req, res) => {
     throw new Error('Transaction not found')
   }
 })
+// @desc    Get all transactions by shop id
+// @route   GET /api/transactions/shop/:id
+// @access  Private/Admin
+const getTransactionsByShopId = asyncHandler(async (req, res) => {
+  const transactions = await Transaction.find({shop: req.params.id}).populate('shop', 'name')
+
+  if(transactions){
+    res.json(transactions)
+  }else{
+    res.status(404)
+    throw new Error('Transactions not found')
+  }
+})
 
 
 // @desc    Get all transactions
