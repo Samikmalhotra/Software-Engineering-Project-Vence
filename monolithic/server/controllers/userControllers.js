@@ -24,8 +24,8 @@ const authUser = asyncHandler(async (req,res) => {
     }
 })
 
-// @desc    Register anew user
-// @route   POST    
+// @desc    Register a new user
+// @route   POST /api/users   
 // @acess   Public
 const registerUser = asyncHandler(async (req,res) => {
     const {name, email, password} = req.body
