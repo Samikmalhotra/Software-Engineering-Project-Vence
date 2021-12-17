@@ -1,12 +1,5 @@
 import {
-    REGISTER_REQUEST,
-    REGISTER_SUCCESS, 
-    REGISTER_FAILURE,
-    AUTH_ERROR,
-    LOGIN_REQUEST,
-    LOGIN_SUCCESS,
-    LOGIN_FAILURE,
-    LOGOUT,
+    GET_ALL_SHOP, GET_SHOP_BY_ID, CREATE_SHOP, UPDATE_SHOP, DELETE_SHOP, GET_ALL_SHOP_ERROR, GET_SHOP_BY_ID_ERROR, CREATE_SHOP_ERROR, UPDATE_SHOP_ERROR, DELETE_SHOP_ERROR
 } from '../actions/types';
 
 const initialState = {
@@ -19,47 +12,37 @@ function auth(state = initialState, action){
     const { type, payload } = action;
     
     switch(type){
-        case REGISTER_REQUEST:
-        case LOGIN_REQUEST:
+        case GET_ALL_SHOP:
             return{
                 ...state,
-                loading: true,
-                error: null
+                shops: payload
             }
-        case REGISTER_SUCCESS:
-            return{
-                ...state, 
-                ...payload,
-                isRegistered: true,
-                loading: false
-            }
-        case LOGIN_SUCCESS:
-            localStorage.setItem('token', payload.token);
-            return{
-                ...state, 
-                ...payload,
-                isAuthenticated: true,
-                loading: false
-            }
-        case REGISTER_FAILURE:
+        case GET_SHOP_BY_ID:
             return{
                 ...state,
-                token: null,
-                isAuthenticated: false,
-                loading: false,
-                registerError: payload
+                shop: payload
             }
-        case AUTH_ERROR:
-        case LOGIN_FAILURE:
-        case LOGOUT:
-            localStorage.removeItem('token');
+        case CREATE_SHOP:
             return{
                 ...state,
-                token: null,
-                isAuthenticated: false,
-                loading: false,
-                error: payload
+                shops
             }
+        case UPDATE_SHOP:
+            return{
+                ...state,
+                shop: payload
+            }
+        case CREATE_SHOP_ERROR:
+        case UPDATE_SHOP_ERROR:
+        case DELETE_SHOP:
+        case DELETE_SHOP:
+        case GET_ALL_SHOP_ERROR:
+        case GET_SHOP_BY_ID_ERROR:
+        case DELETE_SHOP_ERROR:
+            return{
+                ...state
+            }
+        
         default:
             return state;
     }

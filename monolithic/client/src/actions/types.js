@@ -19,6 +19,8 @@ export const DELETE_SHOP = 'DELETE_SHOP';
 export const DELETE_SHOP_ERROR = 'DELETE_SHOP_ERROR';
 export const UPDATE_SHOP = 'UPDATE_SHOP';
 export const UPDATE_SHOP_ERROR = 'UPDATE_SHOP_ERROR';
+export const GET_SHOP_BY_ID = 'GET_SHOP_BY_ID';
+export const GET_SHOP_BY_ID_ERROR = 'GET_SHOP_BY_ID_ERROR'
 
 // Product Actions
 export const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS';
