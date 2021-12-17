@@ -1,6 +1,15 @@
 import axios from 'axios';
 import {
-
+    GET_ALL_PRODUCTS,
+    GET_ALL_PRODUCTS_ERROR,
+    CREATE_PRODUCT,
+    CREATE_PRODUCT_ERROR,
+    DELETE_PRODUCT,
+    DELETE_PRODUCT_ERROR,
+    UPDATE_PRODUCT,
+    UPDATE_PRODUCT_ERROR,
+    GET_PRODUCT,
+    GET_PRODUCT_ERROR,
 } from './types';
 
 export const getAllProducts = (token, shopId) => async dispatch => {
