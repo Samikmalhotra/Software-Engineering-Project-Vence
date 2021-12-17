@@ -1,10 +1,11 @@
 import './App.css';
 import {store, persistor} from './store';
 import { PersistGate } from 'redux-persist/integration/react'
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Navbar from './components/Navbar';
-import Landing from './pages/Landing';
-import Auth from './pages/Auth';
+import {Provider} from 'react-redux';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Navbar from './components/Navbar.jsx';
+import Landing from './pages/Landing.jsx';
+import Auth from './pages/Auth.jsx';
 
 function App() {
   return (
@@ -13,10 +14,10 @@ function App() {
       <PersistGate persistor={persistor}>
         <Router>
           <Navbar/>
-          <Switch>
-            <Route exact path="/" component={Landing}/>
-            <Route path = '/login' component={Auth}/>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Landing/>}/>
+            <Route path = 'login' element={<Auth/>}/>
+          </Routes>
           
 
         </Router>
