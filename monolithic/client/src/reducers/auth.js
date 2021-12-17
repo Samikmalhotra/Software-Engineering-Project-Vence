@@ -10,9 +10,8 @@ import {
 } from '../actions/types';
 
 const initialState = {
-    key: null,
-    isAuthenticated: null,
-    teamLeader: null
+    token: null,
+    isAuthenticated: false,
 }   
 
 function auth(state = initialState, action){

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 // import Loader from '../components/Loader'
 // import FormContainer from '../components/FormContainer'
 // import { login } from '../actions/auth'
+import '../css/auth.css'
 
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState('')

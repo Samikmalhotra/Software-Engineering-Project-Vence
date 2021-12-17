@@ -3,6 +3,8 @@ import {
 } from '../actions/types';
 
 const initialState = {
+    shops: [],
+    shop: null
 }   
 
 function shop(state = initialState, action){

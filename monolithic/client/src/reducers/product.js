@@ -1,6 +1,9 @@
 import { CREATE_PRODUCT, CREATE_PRODUCT_ERROR, DELETE_PRODUCT, DELETE_PRODUCT_ERROR, GET_ALL_PRODUCTS, GET_ALL_PRODUCTS_ERROR, GET_PRODUCT, GET_PRODUCT_ERROR, UPDATE_PRODUCT, UPDATE_PRODUCT_ERROR } from '../actions/types'
 
-const initialState = {}   
+const initialState = {
+    products: [],
+    product: null
+}   
 
 function product(state=initialState, action){
     const { type, payload } = action;
