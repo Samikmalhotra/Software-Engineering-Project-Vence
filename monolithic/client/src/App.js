@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Landing from './pages/Landing.jsx';
-import Auth from './pages/Auth.jsx';
+import Login from './pages/Login.jsx';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Navbar/>
           <Routes>
             <Route path="/" element={<Landing/>}/>
-            <Route path = 'login' element={<Auth/>}/>
+            <Route path = 'login' element={<Login/>}/>
           </Routes>
           
 

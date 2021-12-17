@@ -1,10 +1,10 @@
 import React from 'react'
-
+import '../css/landing.css'
 const Landing = () => {
     return (
-        <div>
-            Hello from Landing
-        </div>
+       <div>
+         Hello from landing
+       </div>
     )
 }
 

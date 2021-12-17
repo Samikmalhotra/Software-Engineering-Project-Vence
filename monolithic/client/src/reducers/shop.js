@@ -3,12 +3,9 @@ import {
 } from '../actions/types';
 
 const initialState = {
-    key: null,
-    isAuthenticated: null,
-    teamLeader: null
 }   
 
-function auth(state = initialState, action){
+function shop(state = initialState, action){
     const { type, payload } = action;
     
     switch(type){
@@ -25,7 +22,7 @@ function auth(state = initialState, action){
         case CREATE_SHOP:
             return{
                 ...state,
-                shops
+                shops: payload
             }
         case UPDATE_SHOP:
             return{
@@ -48,4 +45,4 @@ function auth(state = initialState, action){
     }
 }
 
-export default auth;
+export default shop;
