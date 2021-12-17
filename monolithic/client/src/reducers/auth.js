@@ -41,16 +41,7 @@ function auth(state = initialState, action){
                 isAuthenticated: true,
                 loading: false
             }
-        case REGISTER_FAILURE:
-            return{
-                ...state,
-                token: null,
-                isAuthenticated: false,
-                loading: false,
-                registerError: payload
-            }
         case AUTH_ERROR:
-        case LOGIN_FAILURE:
         case LOGOUT:
             localStorage.removeItem('token');
             return{
