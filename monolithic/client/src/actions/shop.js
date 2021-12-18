@@ -34,7 +34,7 @@ export const getShopById = (token,id) => async dispatch => {
         }
     }
     try {
-        const res = await axios.get(proxy+'/api/shops'+id, config);
+        const res = await axios.get(proxy+'/api/shops/'+id, config);
         dispatch({
             type: GET_SHOP_BY_ID,
             payload: res.data

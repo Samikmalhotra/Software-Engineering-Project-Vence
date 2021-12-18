@@ -18,4 +18,6 @@ a:hover{
 }
 body{
   background-color: rgb(243, 240, 240);
+  max-width: 100vw;
+  overflow-x: hidden;
 }

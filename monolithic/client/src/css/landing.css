@@ -224,7 +224,7 @@ h3
 {
     font-family: 'Montserrat', sans-serif;
     padding-top: 30px;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 }
 
 .bottom-button {

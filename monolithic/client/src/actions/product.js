@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {
+    proxy,
     GET_ALL_PRODUCTS,
     GET_ALL_PRODUCTS_ERROR,
     CREATE_PRODUCT,
@@ -20,7 +21,7 @@ export const getAllProducts = (token, shopId) => async dispatch => {
         }
     }
     try {
-        const res = await axios.get('/api/products'+shopId);
+        const res = await axios.get(proxy+'/api/products/'+shopId, config);
         dispatch({
             type: GET_ALL_PRODUCTS,
             payload: res.data
@@ -41,7 +42,7 @@ export const getProduct = (token, id) => async dispatch => {
         }
     }
     try {
-        const res = await axios.get('/api/products'+id);
+        const res = await axios.get(proxy+'/api/products/'+id, config);
         dispatch({
             type: GET_PRODUCT,
             payload: res.data
@@ -63,7 +64,7 @@ export const createProduct = (token, shopId, name, price, description, category,
     }
     const body = JSON.stringify({shopId, name, price, description, category, brand, image, countInStock});
     try {
-        const res = await axios.post('/api/products', body, config);
+        const res = await axios.post(proxy+'/api/products', body, config);
         dispatch({
             type: CREATE_PRODUCT,
             payload: res.data
@@ -85,7 +86,7 @@ export const updateProduct = (token, id, name, price, description, category, bra
     }
     const body = JSON.stringify({name, price, description, category, brand, image, countInStock});
     try {
-        const res = await axios.put('/api/products'+id, body, config);
+        const res = await axios.put(proxy+'/api/products/'+id, body, config);
         dispatch({
             type: UPDATE_PRODUCT,
             payload: res.data
@@ -106,7 +107,7 @@ export const deleteProduct = (token, id) => async dispatch => {
         }
     }
     try {
-        const res = await axios.delete('/api/products'+id, config);
+        const res = await axios.delete(proxy+'/api/products/'+id, config);
         dispatch({
             type: DELETE_PRODUCT,
             payload: res.data

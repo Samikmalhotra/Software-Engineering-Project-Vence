@@ -8,7 +8,7 @@ import { useDispatch, useSelector,  } from 'react-redux'
 import '../css/auth.css'
 import { createShop } from '../actions/shop'
 
-const CreateShop = () => {
+const AddProduct = () => {
   const [name, setName] = useState('')
   const [location, setLocation] = useState('')
 
@@ -51,11 +51,11 @@ const CreateShop = () => {
             placeholder='Enter location'
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-          ></Form.Control>
+          ></Form.Control>  
         </Form.Group>
 
         <Button type='submit' variant='primary'>
-          Create
+          Add
         </Button>
       </Form>
 
@@ -66,4 +66,4 @@ const CreateShop = () => {
   )
 }
 
-export default CreateShop
+export default AddProduct
