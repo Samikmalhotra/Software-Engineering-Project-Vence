@@ -1,0 +1,22 @@
+.shop{
+    width: 80%;
+    background-color: rgb(248, 246, 246);
+    padding: 2.5%;
+    margin: 5% auto;
+    text-align: left;
+    border-radius: 20px;
+    border-left: 5px solid black;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+}
+.shop:hover{
+    background-color: #edfdf2;
+}
+.shop img{
+    width: 20% !important;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    margin-bottom: 100px !important;
+    top: -33px;
+}

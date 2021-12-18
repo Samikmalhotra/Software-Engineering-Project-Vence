@@ -30,7 +30,7 @@ function auth(state = initialState, action){
             return{
                 ...state, 
                 ...payload,
-                isRegistered: true,
+                isAuthenticated: true,
                 loading: false
             }
         case LOGIN_SUCCESS:

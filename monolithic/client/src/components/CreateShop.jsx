@@ -5,13 +5,12 @@ import { useDispatch, useSelector,  } from 'react-redux'
 // import Message from '../components/Message'
 // import Loader from '../components/Loader'
 // import FormContainer from '../components/FormContainer'
-import { register } from '../actions/auth'
 import '../css/auth.css'
+import { createShop } from '../actions/shop'
 
-const SignupScreen = () => {
-  const [name, setName] = useState('')  
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+const CreateShop = () => {
+  const [name, setName] = useState('')
+  const [location, setLocation] = useState('')
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -21,26 +20,20 @@ const SignupScreen = () => {
 //   const redirect = location.search ? location.search.split('=')[1] : '/'
 
 
-    if (isAuthenticated) {
-      navigate('/shops')
-    }
-
-
   const submitHandler = (e) => {
-    e.preventDefault()
-    dispatch(register(name,email, password))
+    dispatch(createShop(token,name, location))
   }
 
   return (
     // <FormContainer>
     <>
-      <h1>Sign Up</h1>
+      <h1>Create Shop</h1>
       {/* {error && <Message variant='danger'>{error}</Message>} */}
       {/* {loading && <Loader />} */}
       <Form 
       onSubmit={submitHandler}
     >
-        <Form.Group >
+        <Form.Group controlId='email'>
           <Form.Label>Name</Form.Label>
           <Form.Control
             type='text'
@@ -49,43 +42,27 @@ const SignupScreen = () => {
             onChange={(e) => setName(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        <Form.Group>
-          <Form.Label>Email Address</Form.Label>
-          <Form.Control
-            type='email'
-            placeholder='Enter email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
 
-        <Form.Group >
-          <Form.Label>Password</Form.Label>
+        <Form.Group controlId='password'>
+          <Form.Label>Location</Form.Label>
           <Form.Control
-            type='password'
-            placeholder='Enter password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            type='text'
+            placeholder='Enter location'
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Button type='submit' variant='primary'>
-          Sign Up
+          Create
         </Button>
       </Form>
 
-      <Row className='py-3'>
-        <Col>
-          Already signed up?{' '}
-          <Link to={"/login"}>
-            Signin
-          </Link>
-        </Col>
-      </Row>
+
     {/* // </FormContainer>
   ) */}
   </>
   )
 }
 
-export default SignupScreen
+export default CreateShop

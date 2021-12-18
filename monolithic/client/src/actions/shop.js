@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { config } from 'dotenv';
 import {
-    GET_ALL_SHOP, GET_SHOP_BY_ID, CREATE_SHOP, UPDATE_SHOP, DELETE_SHOP, GET_ALL_SHOP_ERROR, GET_SHOP_BY_ID_ERROR, CREATE_SHOP_ERROR, UPDATE_SHOP_ERROR, DELETE_SHOP_ERROR,
+    proxy,GET_ALL_SHOP, GET_SHOP_BY_ID, CREATE_SHOP, UPDATE_SHOP, DELETE_SHOP, GET_ALL_SHOP_ERROR, GET_SHOP_BY_ID_ERROR, CREATE_SHOP_ERROR, UPDATE_SHOP_ERROR, DELETE_SHOP_ERROR,
 } from './types';
 
 export const getAllShops = (token) => async dispatch => {
@@ -10,8 +11,9 @@ export const getAllShops = (token) => async dispatch => {
             'Authorization': `Bearer ${token}`
         }
     }
+    console.log(config)
     try {
-        const res = await axios.get('/api/shops');
+        const res = await axios.get(proxy+'/api/shops', config);
         dispatch({
             type: GET_ALL_SHOP,
             payload: res.data
@@ -32,7 +34,7 @@ export const getShopById = (token,id) => async dispatch => {
         }
     }
     try {
-        const res = await axios.get('/api/shops'+id);
+        const res = await axios.get(proxy+'/api/shops'+id, config);
         dispatch({
             type: GET_SHOP_BY_ID,
             payload: res.data
@@ -54,16 +56,19 @@ export const createShop = (token,name,location) => async dispatch => {
     }
     const body = JSON.stringify({name,location});
     try {
-        const res = await axios.post('/api/shops', body, config);
+        const res = await axios.post(proxy+'/api/shops', body, config);
         dispatch({
             type: CREATE_SHOP,
             payload: res.data
         });
+        dispatch(getAllShops(token))
     } catch (error) {
         dispatch({
             type: CREATE_SHOP_ERROR,
             payload: error.response && error.response.data.error
         });
+        dispatch(getAllShops(token))
+
     }
 }
 
@@ -76,7 +81,7 @@ export const updateShop = (token,id,name,location) => async dispatch => {
     }
     const body = JSON.stringify({name,location});
     try {
-        const res = await axios.put('/api/shops'+id, body, config);
+        const res = await axios.put(proxy+'/api/shops'+id, body, config);
         dispatch({
             type: UPDATE_SHOP,
             payload: res.data
@@ -97,7 +102,7 @@ export const deleteShop = (token,id) => async dispatch => {
         }
     }
     try {
-        const res = await axios.delete('/api/shops'+id, config);
+        const res = await axios.delete(proxy+'/api/shops'+id, config);
         dispatch({
             type: DELETE_SHOP,
             payload: res.data

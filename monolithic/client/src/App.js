@@ -7,6 +7,8 @@ import Navbar from './components/Navbar.jsx';
 import Landing from './pages/Landing.jsx';
 import Login from './pages/Login.jsx';
 import SignupScreen from './pages/Signup';
+import Shops from './pages/Shops';
+import ShopScreen from './pages/ShopScreen';
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
             <Route path="/" element={<Landing/>}/>
             <Route path = 'login' element={<Login/>}/>
             <Route path = 'signup' element={<SignupScreen/>}/>
+            <Route path = 'shops' element={<Shops/>}/>
+            <Route path = 'shops/:shopId' element={<ShopScreen/>}/>
+
           </Routes>
           
 
