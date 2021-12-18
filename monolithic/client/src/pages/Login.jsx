@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
+import '../css/auth.css'
 // import Message from '../components/Message'
 // import Loader from '../components/Loader'
 // import FormContainer from '../components/FormContainer'
@@ -32,45 +33,56 @@ const LoginScreen = ({ location, history }) => {
   return (
     // <FormContainer>
     <>
-      <h1>Sign In</h1>
+    <div class="form-structor">
+	<div class="signup">
+  <h2 class="form-title" id="signup">Sign In</h2>
       {/* {error && <Message variant='danger'>{error}</Message>} */}
       {/* {loading && <Loader />} */}
       <Form 
     //   onSubmit={submitHandler}
     >
+      <div class="form-holder">
         <Form.Group controlId='email'>
-          <Form.Label>Email Address</Form.Label>
-          <Form.Control
+          {/* <Form.Label >Email Address</Form.Label> */}
+          <Form.Control 
             type='email'
             placeholder='Enter email'
-            value={email}
+            value={email} className="input"
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='password'>
-          <Form.Label>Password</Form.Label>
+          {/* <Form.Label>Password</Form.Label> */}
           <Form.Control
             type='password'
             placeholder='Enter password'
-            value={password}
+            value={password} className="input"
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
-
-        <Button type='submit' variant='primary'>
+        </div>
+        <Button type='submit' className="submit-btn">
           Sign In
         </Button>
+        
       </Form>
-
-      <Row className='py-3'>
+      </div>
+      <div class="login slide-up">
+		<div class="center">
+			<h2 class="form-title" id="login"><span>or</span>Sign Up</h2>
+		</div>
+	</div>
+      {/* <Row className='py-3'>
         <Col>
-          New Customer?{' '}
+          New Customer?{' '} */}
           {/* <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}> */}
             {/* Register
           </Link> */}
-        </Col>
-      </Row>
+        {/* </Col>
+      </Row> */}
+     
+      </div>
     {/* // </FormContainer>
   ) */}
   </>
