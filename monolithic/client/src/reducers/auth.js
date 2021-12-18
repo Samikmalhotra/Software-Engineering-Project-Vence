@@ -12,6 +12,7 @@ import {
 const initialState = {
     token: null,
     isAuthenticated: false,
+    loading: false
 }   
 
 function auth(state = initialState, action){
@@ -42,7 +43,6 @@ function auth(state = initialState, action){
             }
         case AUTH_ERROR:
         case LOGOUT:
-            localStorage.removeItem('token');
             return{
                 ...state,
                 token: null,
