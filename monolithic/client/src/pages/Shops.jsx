@@ -58,7 +58,7 @@ const Shops = () => {
         dispatch(getAllShops(auth.token))
     }, [getAllShops, auth.token])
     return (
-        <div>
+        <div className='shops-div'>
             
       <Modal
         open={open}

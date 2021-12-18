@@ -20,9 +20,9 @@ const CreateShop = () => {
 //   const redirect = location.search ? location.search.split('=')[1] : '/'
 
 
-  const submitHandler = (e) => {
+  const submitHandler = async(e) => {
     e.preventDefault()
-    dispatch(createShop(token,name,location))
+    await dispatch(createShop(token,name,location))
   }
 
   return (

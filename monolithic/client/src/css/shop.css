@@ -25,3 +25,6 @@
     margin-bottom: 100px !important;
     top: -33px;
 }
+.shops-div h1:nth-child(1){
+    margin-top: 5vh;
+}

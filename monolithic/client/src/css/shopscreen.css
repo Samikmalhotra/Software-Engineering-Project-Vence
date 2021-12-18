@@ -8,4 +8,12 @@
 .shopscreen h1{
     width: 70%;
     margin-top: 2vh;
+    margin-right: 0;
+}
+.shopscreen h1:nth-child(1){
+    margin-top: 5vh;
+}
+.shopscreen button{
+    float: right;
+    margin-right: 2vw;
 }
