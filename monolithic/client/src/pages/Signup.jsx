@@ -20,7 +20,12 @@ const SignupScreen = () => {
 
 //   const redirect = location.search ? location.search.split('=')[1] : '/'
 
-
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/shops')
+    }
+   
+  }, [])
     if (isAuthenticated) {
       navigate('/shops')
     }

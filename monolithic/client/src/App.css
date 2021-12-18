@@ -9,3 +9,13 @@
   padding: 0;
   font-family: "PT Sans", sans-serif;
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
+a:hover{
+  color: inherit;
+}
+body{
+  background-color: rgb(243, 240, 240);
+}

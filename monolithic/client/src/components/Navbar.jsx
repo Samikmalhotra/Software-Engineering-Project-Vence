@@ -66,14 +66,22 @@ function Navbar() {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <Link
-              to="/services"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Services <i className="fas fa-caret-down" />
-            </Link>
-            <Dropdown/>
+            {auth.isAuthenticated? 
+      <Link
+      to="/shops"
+      className="nav-links"
+      onClick={closeMobileMenu}
+    >
+      Shops <i className="fas fa-caret-down" />
+    </Link>
+ : <Link
+ to="/services"
+ className="nav-links"
+ onClick={closeMobileMenu}
+>
+ Services <i className="fas fa-caret-down" />
+</Link>}
+            
           </li>
           <li className="nav-item">
             <Link

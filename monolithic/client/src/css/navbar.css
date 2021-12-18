@@ -1,9 +1,9 @@
 .navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background: rgb(25, 25, 48);
   height: 80px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:baseline;
   font-size: 1.2rem;
 }
 
@@ -15,7 +15,9 @@
   text-decoration: none;
   font-size: 2rem;
 }
-
+.navbar-logo:hover{
+  color: #02c195;
+}
 .fa-firstdraft {
   margin-left: 0.5rem;
   font-size: 1.6rem;
@@ -45,7 +47,7 @@
 }
 
 .nav-links:hover {
-  background-color: #1888ff;
+  background-color: #02c195;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
@@ -60,6 +62,15 @@
 
 .menu-icon {
   display: none;
+}
+
+.css-sghohy-MuiButtonBase-root-MuiButton-root{
+  background-color: #02c195 !important;
+  transition: all 0.3s ease-in-out !important;
+}
+.css-sghohy-MuiButtonBase-root-MuiButton-root:hover{
+  color: #02c195;
+  background-color: #fff !important; 
 }
 
 @media screen and (max-width: 960px) {
@@ -98,7 +109,7 @@
   }
 
   .nav-links:hover {
-    background-color: #1888ff;
+    background-color: #02c195;
     border-radius: 0;
   }
 
@@ -131,7 +142,7 @@
     margin: 2rem auto;
     border-radius: 4px;
     width: 80%;
-    background: #1888ff;
+    background: #02c195;
     text-decoration: none;
     color: #fff;
     font-size: 1.5rem;
@@ -139,7 +150,7 @@
 
   .nav-links-mobile:hover {
     background: #fff;
-    color: #1888ff;
+    color: #02c195;
     transition: 250ms;
   }
 
