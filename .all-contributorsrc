@@ -1,0 +1,29 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Samikmalhotra",
+      "name": "Samik Malhotra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/72279316?v=4",
+      "profile": "https://samikmalhotra.netlify.app/",
+      "contributions": [
+        "infra",
+        "code",
+        "design",
+        "ideas",
+        "maintenance",
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Software-Engineering-Project-Zeus",
+  "projectOwner": "Samikmalhotra",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
