@@ -1,0 +1,44 @@
+.about-us
+{
+    margin: 0;
+    background-color: #02c195;
+    padding-top: 100px;
+    padding-bottom: 10px;
+}
+
+.heading
+{
+    text-align: center;
+    margin-top: 115px;
+    font-family: 'Merriweather', serif;
+    color: white;
+    margin: 0;
+}
+
+.paragraph
+{
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.main
+{
+    margin: 0;
+}
+
+.footer
+{
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 100px;
+    color: white;
+}
+
+.image
+{
+    float: left;
+}

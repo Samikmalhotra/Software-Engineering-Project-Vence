@@ -8,40 +8,38 @@ const Landing = () => {
       <h3 class="top-content">The easiest inventory management software</h3>
       <a href="#" class="first-button">MANAGE INVENTORY FOR FREE</a>
   </div>
-
-   <div class="middle-container">
-    <div class="middle-heading">
-      <h3 class="middle-h3">Simple as Excel & Impactful as SAP</h3>
+    
+  <div class="middle-heading">
+      <h2 class="middle-h2">Simple as Excel & Impactful as SAP</h2>
       <p class="middle-p">Also, Integrated with Tally to Streamline your Accounting</p>
     </div>
-    <div class="logos">
-        <img class="logo1" src="https://res.cloudinary.com/dm2qi0xrw/image/upload/v1639787599/Vence%20%28SE%29/l2/logo1_vau7iv.png" alt="img1"/>
-        <img class="logo2" src="https://res.cloudinary.com/dm2qi0xrw/image/upload/v1639787599/Vence%20%28SE%29/l2/logo2_prklas.png" alt="img1"/>
-        <img class="logo3" src="https://res.cloudinary.com/dm2qi0xrw/image/upload/v1639787599/Vence%20%28SE%29/l2/logo3_pmarjl.png" alt="img1"/>
-        <img class="logo4" src="https://res.cloudinary.com/dm2qi0xrw/image/upload/v1639787599/Vence%20%28SE%29/l2/logo4_jaer5c.png" alt="img1"/>
-    </div>
-    <div class="middle-lower">
-      <div class="box1">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <i class="fas fa-users fa-2x"></i>
         <h4>Free Sign Up</h4>
         <p>The web app is completely free to use, with no charges whatsoever.</p>
-      </div>
-      <div class="box2">
+        </div>
+        <div class="col-sm">
+        <i class="fas fa-clock fa-2x"></i>
         <h4>Saves time and hastle</h4>
         <p>Save atleast 4 hours on a daily basis and invest your time in Business Growth & RnD</p>
-      </div>
-      <div class="box3">
+        </div>
+        <div class="col-sm">
+        <i class="fas fa-file-invoice-dollar fa-2x"></i>
         <h4>Generate bill in one click</h4>
         <p>No more pen paper bills or debt, generate a customer invoice with just one click.</p>
-      </div>
-      <div class="box4">
+        </div>
+        <div class="col-sm">
+        <i class="fas fa-universal-access fa-2x"></i>
         <h4>Implements 100%</h4>
         <p>Extremely easy to understand and operate by users of any age group.</p>
+        </div>
       </div>
     </div>
-  </div>  
 
       <div class="feature1">
-        <h2>Why us?</h2>
+        <h2 class="why-us">Why us?</h2>
         <div class="feature1-col">
           <img class="small-business-img" src="https://res.cloudinary.com/dm2qi0xrw/image/upload/v1639774429/Vence%20%28SE%29/l2/20944999_ufbk12.jpg" alt="gd-img"/>
           <h3 class="second-heading">Empowering Small Businesses</h3>
