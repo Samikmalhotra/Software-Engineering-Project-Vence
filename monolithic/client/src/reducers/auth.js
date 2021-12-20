@@ -10,9 +10,9 @@ import {
 } from '../actions/types';
 
 const initialState = {
-    key: null,
-    isAuthenticated: null,
-    teamLeader: null
+    token: null,
+    isAuthenticated: false,
+    loading: false
 }   
 
 function auth(state = initialState, action){
@@ -30,7 +30,7 @@ function auth(state = initialState, action){
             return{
                 ...state, 
                 ...payload,
-                isRegistered: true,
+                isAuthenticated: true,
                 loading: false
             }
         case LOGIN_SUCCESS:
@@ -43,7 +43,6 @@ function auth(state = initialState, action){
             }
         case AUTH_ERROR:
         case LOGOUT:
-            localStorage.removeItem('token');
             return{
                 ...state,
                 token: null,

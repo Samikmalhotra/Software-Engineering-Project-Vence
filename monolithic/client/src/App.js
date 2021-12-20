@@ -6,6 +6,10 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Landing from './pages/Landing.jsx';
 import Login from './pages/Login.jsx';
+import SignupScreen from './pages/Signup';
+import Shops from './pages/Shops';
+import ShopScreen from './pages/ShopScreen';
+import ShopScreenAdmin from './pages/ShopScreenAdmin';
 
 function App() {
   return (
@@ -17,6 +21,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing/>}/>
             <Route path = 'login' element={<Login/>}/>
+            <Route path = 'signup' element={<SignupScreen/>}/>
+            <Route path = 'shops' element={<Shops/>}/>
+            <Route path = 'shops/:shopId' element={<ShopScreen/>}/>
+            <Route path = "admin" element={<ShopScreenAdmin/>}/>
+
           </Routes>
           
 

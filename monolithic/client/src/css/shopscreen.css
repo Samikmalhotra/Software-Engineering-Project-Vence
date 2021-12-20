@@ -1,0 +1,19 @@
+.product-div{
+    margin: 5%;
+    background-color: #fff;
+    min-height: 68vh;
+    border-radius: 20px;
+    filter: drop-shadow(2px 2px 6px #1a191962);
+}
+.shopscreen h1{
+    width: 70%;
+    margin-top: 2vh;
+    margin-right: 0;
+}
+.shopscreen h1:nth-child(1){
+    margin-top: 5vh;
+}
+.shopscreen button{
+    float: right;
+    margin-right: 2vw;
+}

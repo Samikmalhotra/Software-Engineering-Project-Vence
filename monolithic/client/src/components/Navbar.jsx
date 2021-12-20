@@ -1,8 +1,15 @@
-import React, { useState } from "react";
-import { Button } from "./Button";
+import React, { useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "../css/navbar.css";
 import Dropdown from "./Dropdown";
+import {useDispatch, useSelector} from 'react-redux'
+import { logout } from "../actions/auth";
+import "../css/button.css";
+import {Button} from '@mui/material'
+
+
+
+
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -10,6 +17,17 @@ function Navbar() {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  const dispatch = useDispatch()
+  const auth = useSelector(state => state.auth)
+
+  const {loading, isAuthenticated} = auth
+
+  const clickHandler = (e) => {
+    e.preventDefault();
+    console.log('Hello')
+    dispatch(logout());
+  }
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -48,14 +66,22 @@ function Navbar() {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <Link
-              to="/services"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Services <i className="fas fa-caret-down" />
-            </Link>
-            <Dropdown/>
+            {auth.isAuthenticated? 
+      <Link
+      to="/shops"
+      className="nav-links"
+      onClick={closeMobileMenu}
+    >
+      Shops <i className="fas fa-caret-down" />
+    </Link>
+ : <Link
+ to="/services"
+ className="nav-links"
+ onClick={closeMobileMenu}
+>
+ Services <i className="fas fa-caret-down" />
+</Link>}
+            
           </li>
           <li className="nav-item">
             <Link
@@ -85,7 +111,14 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <Button />
+        <Fragment>
+      {auth.isAuthenticated? 
+      <Button variant="contained" className="btn" onClick={clickHandler}>Logout</Button>
+ : <Link to="signup">
+      <Button variant="contained" className="btn">Sign Up</Button>
+    </Link>}
+    
+    </Fragment>
       </nav>
     </>
   );

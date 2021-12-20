@@ -10,6 +10,7 @@ import shopRoutes from './routes/shopRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 import transactionRoutes from './routes/transactionRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
+import cors from 'cors'
 
 connectDB()
 
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV === 'development') {
   }
 
   app.use(express.json())
+  app.use(cors())
 
   app.use('/api/products', productRoutes)
   app.use('/api/users', userRoutes)
