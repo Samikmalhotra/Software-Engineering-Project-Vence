@@ -16,23 +16,23 @@ const Landing = () => {
     <div class="container">
       <div class="row">
         <div class="col-sm">
-        <i class="fas fa-users fa-2x"></i>
-        <h4>Free Sign Up</h4>
+        <i class="fas fa-users fa-edit fa-2x"></i>
+        <h4 class="first-col">Free Sign Up</h4>
         <p>The web app is completely free to use, with no charges whatsoever.</p>
         </div>
         <div class="col-sm">
         <i class="fas fa-clock fa-2x"></i>
-        <h4>Saves time and hastle</h4>
+        <h4 class="second-col">Saves time and hastle</h4>
         <p>Save atleast 4 hours on a daily basis and invest your time in Business Growth & RnD</p>
         </div>
         <div class="col-sm">
         <i class="fas fa-file-invoice-dollar fa-2x"></i>
-        <h4>Generate bill in one click</h4>
+        <h4 class="third-col">Generate bill in one click</h4>
         <p>No more pen paper bills or debt, generate a customer invoice with just one click.</p>
         </div>
         <div class="col-sm">
         <i class="fas fa-universal-access fa-2x"></i>
-        <h4>Implements 100%</h4>
+        <h4 class="fourth-col">Implements 100%</h4>
         <p>Extremely easy to understand and operate by users of any age group.</p>
         </div>
       </div>
