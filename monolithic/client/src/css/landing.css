@@ -101,7 +101,26 @@
 .fas 
 {
     color: #02c195;
-    padding-bottom: 25px;
+}
+
+.first-col
+{
+    padding-top: 25px;
+}
+
+.second-col
+{
+    padding-top: 25px;
+}
+
+.third-col
+{
+    padding-top: 25px;
+}
+
+.fourth-col
+{
+    padding-top: 25px;
 }
 
 .small-business-img
