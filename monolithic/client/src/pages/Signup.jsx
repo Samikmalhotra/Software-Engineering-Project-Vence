@@ -39,54 +39,65 @@ const SignupScreen = () => {
   return (
     // <FormContainer>
     <>
-      <h1>Sign Up</h1>
+    <div class="form-structor">
+      <div class="signup">
+      <h2 class="form-title" id="signup">Sign Up</h2>
       {/* {error && <Message variant='danger'>{error}</Message>} */}
       {/* {loading && <Loader />} */}
       <Form 
       onSubmit={submitHandler}
     >
-        <Form.Group >
-          <Form.Label>Name</Form.Label>
+      <div class="form-holder">
+      <Form.Group >
+          {/* <Form.Label>Name</Form.Label> */}
           <Form.Control
             type='text'
             placeholder='Enter name'
-            value={name}
+            value={name} className="input"
             onChange={(e) => setName(e.target.value)}
           ></Form.Control>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Email Address</Form.Label>
+          {/* <Form.Label>Email Address</Form.Label> */}
           <Form.Control
             type='email'
             placeholder='Enter email'
-            value={email}
+            value={email} className="input"
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group >
-          <Form.Label>Password</Form.Label>
+          {/* <Form.Label>Password</Form.Label> */}
           <Form.Control
             type='password'
             placeholder='Enter password'
-            value={password}
+            value={password} className="input"
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
-
-        <Button type='submit' variant='primary'>
+      </div>
+        <Button type='submit' className="submit-btn">
           Sign Up
         </Button>
       </Form>
+      </div>
+      <div class="login slide-up">
+		<div class="center">
+			<h2 class="form-title" id="login"><span>Already signed up?</span>Login</h2>
+		</div>
+	</div>
+    </div>
+      
 
-      <Row className='py-3'>
+      {/* <Row className='py-3'>
         <Col>
           Already signed up?{' '}
           <Link to={"/login"}>
             Signin
           </Link>
         </Col>
-      </Row>
+      </Row> */}
     {/* // </FormContainer>
   ) */}
   </>
