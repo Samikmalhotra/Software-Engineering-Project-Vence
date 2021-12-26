@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { createTransaction } from '../actions/transaction'
@@ -12,7 +12,7 @@ import auth from '../reducers/auth'
 
 const FinalTransaction = ({ history }) => {
   const dispatch = useDispatch()
-
+  const params = useParams()
   const cart = useSelector((state) => state.cart)
 
 //   if (!cart.shippingAddress.address) {
@@ -32,7 +32,7 @@ const FinalTransaction = ({ history }) => {
   cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)))
   cart.totalPrice = (
     Number(cart.itemsPrice) +
-    Number(cart.shippingPrice) +
+    // Number(cart.shippingPrice) +
     Number(cart.taxPrice)
   ).toFixed(2)
 
@@ -50,16 +50,15 @@ const FinalTransaction = ({ history }) => {
 
   const placeOrderHandler = () => {
     dispatch(
-      createTransaction({
-        token: auth.token,
-        orderItems: cart.cart,
-        shippingAddress: cart.shippingAddress,
-        paymentMethod: cart.paymentMethod,
-        itemsPrice: cart.itemsPrice,
-        shippingPrice: cart.shippingPrice,
-        taxPrice: cart.taxPrice,
-        totalPrice: cart.totalPrice,
-      })
+      createTransaction(
+        auth.token,
+        params.shopId,
+        cart.cart,
+        "cash",
+        cart.itemsPrice,
+        cart.taxPrice,
+        cart.totalPrice,
+      )
     )
   }
 
@@ -79,11 +78,11 @@ const FinalTransaction = ({ history }) => {
               {/* </p> */}
             </ListGroup.Item>
 
-            <ListGroup.Item>
+            {/* <ListGroup.Item>
               <h2>Payment Method</h2>
               <strong>Method: </strong>
-              {/* {cart.paymentMethod} */}
-            </ListGroup.Item>
+              {cart.paymentMethod}
+            </ListGroup.Item> */}
 
             {/* <ListGroup.Item>
               <h2>Order Items</h2>
@@ -156,7 +155,7 @@ const FinalTransaction = ({ history }) => {
                   type='button'
                   className='btn-block'
                   disabled={cart.cart === 0}
-                //   onClick={placeOrderHandler}
+                  onClick={placeOrderHandler}
                 >
                   Transaction
                 </Button>

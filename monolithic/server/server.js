@@ -11,6 +11,7 @@ import productRoutes from './routes/productRoutes.js'
 import transactionRoutes from './routes/transactionRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import cors from 'cors'
+import employeeRoutes from './routes/employeeRoutes.js'
 
 connectDB()
 
@@ -27,6 +28,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use('/api/users', userRoutes)
   app.use('/api/shops', shopRoutes)
   app.use('/api/transactions', transactionRoutes)
+  app.use('/api/employees', employeeRoutes)
   app.use('/api/upload', uploadRoutes)
 
     const __dirname = path.resolve()

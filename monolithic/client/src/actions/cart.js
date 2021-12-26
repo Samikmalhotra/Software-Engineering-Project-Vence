@@ -2,7 +2,6 @@ import axios from "axios";
 import {CART_ADD_ITEM, proxy} from './types'
 
 export const addToCart = (token, id, qty) => async (dispatch, getState) => {
-    console.log( 'addToCart: ', token, id, qty );
 
     const config = {
         headers: {

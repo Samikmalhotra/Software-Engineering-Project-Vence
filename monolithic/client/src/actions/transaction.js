@@ -1,5 +1,7 @@
 import axios from "axios";
 import {
+  proxy,
+  CART_ADD_ITEM,
     GET_TRANSACTIONS,
     GET_TRANSACTIONS_ERROR,
     GET_TRANSACTION_BY_ID,
@@ -19,7 +21,7 @@ export const getTransactionById = (token, id) => async dispatch => {
     }
   };
   try {
-    const res = await axios.get("/api/transactions/" + id, config);
+    const res = await axios.get(proxy+"/api/transactions/" + id, config);
     dispatch({
       type: GET_TRANSACTION_BY_ID,
       payload: res.data
@@ -40,7 +42,7 @@ export const getTransactions = (token, shopId) => async dispatch => {
         }
     };
     try {
-        const res = await axios.get("/api/transactions/shop/" + shopId, config);
+        const res = await axios.get(proxy+"/api/transactions/shop/" + shopId, config);
         dispatch({
         type: GET_TRANSACTIONS,
         payload: res.data
@@ -61,7 +63,7 @@ export const getTransactionsByShopId = (token, shopId) => async dispatch => {
         }
     };
     try {
-        const res = await axios.get("/api/transactions/shop/" + shopId, config);
+        const res = await axios.get(proxy+"/api/transactions/shop/" + shopId, config);
         dispatch({
         type: GET_TRANSACTIONS_BY_SHOP_ID,
         payload: res.data
@@ -81,17 +83,18 @@ export const createTransaction = (token, shopId, transactionItems, paymentMethod
         Authorization: `Bearer ${token}`
         }
     };
-    const body = JSON.stringify({shopId, transactionItems, paymentMethod, itemsPrice, taxPrice, totalPrice});
+    const body = JSON.stringify({transactionItems, paymentMethod, itemsPrice, taxPrice, totalPrice, shopId});
+    // console.log(body)
     try {
-        const res = await axios.post("/api/transactions", body, config);
+        const res = await axios.post(proxy+"/api/transactions", body, config);
         dispatch({
         type: CREATE_TRANSACTION,
         payload: res.data
         });
-    } catch (error) {
-        dispatch({
-        type: CREATE_TRANSACTION_ERROR,
-        payload: error.response && error.response.data.error
-        });
+    } catch (e) {
+        // dispatch({
+        // type: CREATE_TRANSACTION_ERROR,
+        // // payload: error.response && error.response.data.error
+        // });
     }
 }
