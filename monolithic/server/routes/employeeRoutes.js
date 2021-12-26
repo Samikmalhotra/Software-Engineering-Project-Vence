@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import {createEmployee, deleteEmployee, getEmployees} from '../controllers/employeeContollers'
+import {createEmployee, deleteEmployee, getEmployees} from '../controllers/employeeContollers.js'
 import {admin, protect} from '../middlewares/authMiddlewares.js'
 
 router.route('/').post(protect, admin, createEmployee)

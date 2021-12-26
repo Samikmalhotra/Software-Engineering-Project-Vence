@@ -12,6 +12,7 @@ import ShopScreen from './pages/ShopScreen';
 import ShopScreenAdmin from './pages/ShopScreenAdmin';
 import Transaction from './pages/Transaction'
 import FinalTransaction from './pages/FinalTransaction';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing/>}/>
             <Route path = 'login' element={<Login/>}/>
+            <Route path = 'about' element={<AboutUs/>}/>
             <Route path = 'signup' element={<SignupScreen/>}/>
             <Route path = 'shops' element={<Shops/>}/>
             <Route path = 'shops/:shopId' element={<ShopScreen/>}/>

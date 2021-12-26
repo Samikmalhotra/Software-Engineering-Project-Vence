@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler";
-import Employee from "../models/employeeModel";
+import Employee from "../models/employeeModel.js";
 
 // @desc    Fetch all employees
 // @route   GET /api/employees/:shopId
@@ -26,7 +26,7 @@ const deleteEmployee = asyncHandler(async (req, res) => {
 // @route   POST /api/employees
 // @acess   Private
 const createEmployee = asyncHandler(async (req, res) => {
-    const { shopId, name, email, phone, position } = req.body;
+    const { shopId, name, age } = req.body;
     const employee = new Employee({
         shop: shopId,
         name,

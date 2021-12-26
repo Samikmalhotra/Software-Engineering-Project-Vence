@@ -1,6 +1,6 @@
-import {Button} from 'react-bootstrap';
+import {Button, Form} from 'react-bootstrap';
 import React,{useEffect, useState} from 'react'
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router'
 import { getAllProducts } from '../actions/product';
@@ -12,6 +12,7 @@ import Modal from '@mui/material/Modal';
 import AddProduct from '../components/AddProduct';
 import { Link } from 'react-router-dom';
 import Product from '../components/Product';
+import { createEmployee, deleteEmployee, getEmployees } from '../actions/employee';
 
 
 const style = {
@@ -29,6 +30,10 @@ const style = {
 const ShopScreen = () => {
 
     const [open, setOpen] = React.useState(false);
+
+    const [name,setName]=useState('')
+    const [age,setAge]=useState(0)
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -37,10 +42,21 @@ const ShopScreen = () => {
     const auth = useSelector(state => state.auth)
     const shopState = useSelector(state => state.shop)
     const productState = useSelector(state => state.product)
+    const employeeState = useSelector(state => state.employee)
+
+    const submitHandler = (e) => {
+      e.preventDefault();
+      console.log(auth.token,params.shopId, name, age)
+      dispatch(createEmployee(auth.token,params.shopId, name, age))
+    }
+    const deleteHandler = (id) => {
+      dispatch(deleteEmployee(auth.token,id, params.shopId))
+    }
 
     useEffect(() => {
        dispatch(getAllProducts(auth.token,params.shopId)) 
        dispatch(getShopById(auth.token, params.shopId))
+       dispatch(getEmployees(auth.token, params.shopId))
     }, [dispatch, auth.token, params.shopId])
     return (
         <div className="shopscreen">
@@ -61,18 +77,48 @@ const ShopScreen = () => {
             <Row>
                 <Col xs={8}>
                     <div className="product-div">
+                    
                       {productState && productState.products && productState.products.map(prod => {
                         return(
                           <Product product={prod}/>
                         )
                       })}
+                      
                     </div>
                 </Col>
                 <Col xs={4}>
                    <div className='employee-div'>
+                   <Table striped bordered hover>
+                   <thead>
+                    <tr>
+                     
+                      <th>Name</th>
+                      <th>Age</th>
+                      <th></th>
 
+                    </tr>
+                    {employeeState && employeeState.employees && employeeState.employees.map(emp => {
+                      return(
+                        <tr>
+                          <td className='td'>{emp.name}</td>
+                          <td className='td'>{emp.age}</td>
+                          <td className='td'><Button variant="danger" onClick={(e)=>{e.preventDefault();deleteHandler(emp._id)}}>Delete</Button></td>
+                            
+                        </tr>
+                      )
+                    })}
+                  </thead>
+                  </Table>
                    </div>
+                   <Form onSubmit={submitHandler}>
+                  <input type={'text'} placeholder={'Name'} value={name} 
+                  onChange={(e) => setName(e.target.value)}/>
+                  <input type={'text'} placeholder={'Age'} value={age}
+                  onChange={(e) => setAge(e.target.value)}/>
+                  <Button type={'submit'}>Add Employee</Button> 
+                </Form>
                 </Col>
+                
             </Row>
         </div>
     )
