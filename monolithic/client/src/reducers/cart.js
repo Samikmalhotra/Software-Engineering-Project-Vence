@@ -1,4 +1,4 @@
-import { CART_ADD_ITEM } from "../actions/types";
+import { CART_ADD_ITEM, CLEAR_CART } from "../actions/types";
 
 const initialState = {
     loading: false,
@@ -10,7 +10,7 @@ function cart(state = initialState, action){
     switch(type){
         case CART_ADD_ITEM:
         const item = payload
-        console.log(item)
+         // console.log(item)
 
         const existItem = state.cart.find((x) => x.product === item.product)
 
@@ -26,6 +26,11 @@ function cart(state = initialState, action){
             ...state,
             cart: [...state.cart, item],
             }
+        }
+        case CLEAR_CART:
+        return {
+            ...state,
+            cart: []
         }
         default:
             return state

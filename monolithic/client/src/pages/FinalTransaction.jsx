@@ -14,7 +14,7 @@ const FinalTransaction = ({ history }) => {
   const dispatch = useDispatch()
   const params = useParams()
   const cart = useSelector((state) => state.cart)
-
+  const auth = useSelector((state) => state.auth)
 //   if (!cart.shippingAddress.address) {
 //     history.push('/shipping')
 //   } else if (!cart.paymentMethod) {

@@ -26,6 +26,10 @@ const transactionSchema = mongoose.Schema(
                 type: mongoose.Schema.Types.ObjectId,
                 required: true,
                 ref: 'Product',
+            },
+            countInStock:{
+                type: Number,
+                required: true
             }
         }
     ],

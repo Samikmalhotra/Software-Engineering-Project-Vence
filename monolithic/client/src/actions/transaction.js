@@ -10,6 +10,7 @@ import {
     GET_TRANSACTIONS_BY_SHOP_ID_ERROR,
     CREATE_TRANSACTION,
     CREATE_TRANSACTION_ERROR,
+    CLEAR_CART,
 } from "./types";
 
 
@@ -77,20 +78,25 @@ export const getTransactionsByShopId = (token, shopId) => async dispatch => {
 }
 
 export const createTransaction = (token, shopId, transactionItems, paymentMethod, itemsPrice, taxPrice, totalPrice) => async dispatch => {
-    const config = {
+  
+  const config = {
         headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`
         }
     };
     const body = JSON.stringify({transactionItems, paymentMethod, itemsPrice, taxPrice, totalPrice, shopId});
-    // console.log(body)
+    console.log(shopId)
     try {
         const res = await axios.post(proxy+"/api/transactions", body, config);
         dispatch({
         type: CREATE_TRANSACTION,
         payload: res.data
         });
+
+        dispatch({
+          type: CLEAR_CART
+        })
     } catch (e) {
         // dispatch({
         // type: CREATE_TRANSACTION_ERROR,

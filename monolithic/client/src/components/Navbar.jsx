@@ -73,25 +73,17 @@ function Navbar() {
       onClick={closeMobileMenu}
     >
       Shops <i className="fas fa-caret-down" />
-    </Link>
- : <Link
- to="/services"
- className="nav-links"
- onClick={closeMobileMenu}
->
- Services <i className="fas fa-caret-down" />
-</Link>}
+    </Link>: ''}
+ {/* : <Link */}
+{/* //  to="/services"
+//  className="nav-links"
+//  onClick={closeMobileMenu}
+// >
+//  Services <i className="fas fa-caret-down" />
+// </Link>} */}
             
           </li>
-          <li className="nav-item">
-            <Link
-              to="/products"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Products
-            </Link>
-          </li>
+          
           <li className="nav-item">
             <Link
               to="/about"

@@ -6,7 +6,7 @@ const Landing = () => {
       <div class="top-container">
       <h1>Inventory Management and Invoicing <br/> for your business.</h1>
       <h3 class="top-content">The easiest inventory management software</h3>
-      <a href="#" class="first-button">MANAGE INVENTORY FOR FREE</a>
+      <a href="/signup" class="first-button">MANAGE INVENTORY FOR FREE</a>
   </div>
     
   <div class="middle-heading">

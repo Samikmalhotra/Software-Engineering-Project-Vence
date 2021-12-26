@@ -47,6 +47,7 @@ export const GET_TRANSACTIONS_BY_SHOP_ID_ERROR = 'GET_TRANSACTIONS_BY_SHOP_ID_ER
 // Cart Actions
 export const CART_ADD_ITEM = "CART_ADD_ITEM"
 export const CART_REMOVE_ITEM = "CART_REMOVE_ITEM"
+export const CLEAR_CART = "CLEAR_CART"
 
 // Employee Actions
 export const GET_ALL_EMPLOYEES = 'GET_ALL_EMPLOYEES';

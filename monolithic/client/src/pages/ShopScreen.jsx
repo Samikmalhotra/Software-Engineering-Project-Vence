@@ -62,6 +62,7 @@ const ShopScreen = () => {
         <div className="shopscreen">
             <Link to={"/shops/"+params.shopId+"/generateinvoice"}><Button >New Transaction</Button></Link>
             <Button onClick={handleOpen}>Add Product</Button>
+            <Link to={"/"+params.shopId+"/transactions"}><Button>Shop Transactions</Button></Link>
             <h1>{shopState && shopState.shop && shopState.shop.name}</h1>
                   
       <Modal

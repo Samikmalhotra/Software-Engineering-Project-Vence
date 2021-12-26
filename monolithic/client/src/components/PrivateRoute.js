@@ -1,23 +1,20 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom'
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import React,{useEffect} from 'react'
+import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
+const PrivateRoute = ({children}) => {
+    const auth = useSelector(state => state.auth)
+    const history = useHistory()
 
-const privateRoute = ({component: Component,auth: {isAuthenticated, loading },  ...rest}) => (
-    <Route 
-        {...rest} 
-        render={props => !isAuthenticated && !loading  ? (
-            <Redirect to = '/login' />) : (<Component {...props} />)} />
-)
-  
-
-privateRoute.propTypes = {
-    auth:PropTypes.object.isRequired
+    useEffect(() => {if(!auth.isAuthenticated){
+        history.push('/login')
+    }},[])
+    if(!auth.isAuthenticated){
+        history.push('/login')
+    }
+    return (
+        {children}
+    )
 }
 
-const mapStateToProps = state => ({
-    auth:state.auth
-})
-
-export default connect(mapStateToProps, )(privateRoute)
+export default PrivateRoute

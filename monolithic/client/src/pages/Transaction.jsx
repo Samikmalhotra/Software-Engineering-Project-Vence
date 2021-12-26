@@ -87,7 +87,7 @@ const Transaction = () => {
                       })}
                     </Table>
                    </div>
-                   <Link to ='/shops/:shopId/transaction'><Button >To Invoice</Button></Link>
+                   <Link to ={'/shops/'+params.shopId+'/transaction'}><Button >To Invoice</Button></Link>
                 </Col>
             </Row>
         </div>
