@@ -6,9 +6,9 @@ import { useDispatch, useSelector,  } from 'react-redux'
 // import Loader from '../components/Loader'
 // import FormContainer from '../components/FormContainer'
 import '../css/auth.css'
-import { createShop } from '../actions/shop'
+import { createProduct } from '../actions/product'
 
-const AddProduct = () => {
+const AddProduct = ({params}) => {
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
   const [description, setDescription] = useState('')
@@ -26,8 +26,8 @@ const AddProduct = () => {
 
 
   const submitHandler = (e) => {
-    // e.preventDefault()
-    // dispatch(createShop(token,name,location))
+    e.preventDefault()
+    dispatch(createProduct(token, params.shopId, name, price, description, category, brand, image, countInStock))
   }
 
   return (
@@ -74,7 +74,7 @@ const AddProduct = () => {
           <Form.Label>Category</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter location'
+            placeholder='Enter Category'
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           ></Form.Control>  
@@ -91,6 +91,15 @@ const AddProduct = () => {
           ></Form.Control>  
         </Form.Group>
 
+        <Form.Group >
+          <Form.Label>Image</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Enter Image URL'
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          ></Form.Control>  
+        </Form.Group>
 
         <Form.Group>
           <Form.Label>Count In Stock</Form.Label>

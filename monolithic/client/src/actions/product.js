@@ -69,11 +69,14 @@ export const createProduct = (token, shopId, name, price, description, category,
             type: CREATE_PRODUCT,
             payload: res.data
         });
+        dispatch(getAllProducts(token, shopId));
     } catch (error) {
         dispatch({
             type: CREATE_PRODUCT_ERROR,
             payload: error.response && error.response.data.error
         });
+        dispatch(getAllProducts(token, shopId));
+
     }
 }
 
