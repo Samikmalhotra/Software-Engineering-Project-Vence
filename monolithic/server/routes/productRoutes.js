@@ -5,6 +5,6 @@ import {admin, protect} from '../middlewares/authMiddlewares.js'
 
 router.route('/').post(protect, admin, createProduct)
 router.route('/:shopId').get(protect, admin, getProducts)
-router.route('/:id').get(protect, admin, getProductById).delete(protect, admin , deleteProduct).put(protect, admin, updateProduct)
+router.route('/prod/:id').get(protect, getProductById).delete(protect, admin , deleteProduct).put(protect, admin, updateProduct)
 
 export default router

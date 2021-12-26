@@ -1,4 +1,4 @@
-import {Button} from 'react-bootstrap';
+import {Button, Table} from 'react-bootstrap';
 import React,{useEffect, useState} from 'react'
 import { Row, Col } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
@@ -12,8 +12,6 @@ import Modal from '@mui/material/Modal';
 import AddProduct from '../components/AddProduct';
 import { Link } from 'react-router-dom';
 import Product from '../components/ProductLink';
-
-
 const style = {
     position: 'absolute',
     top: '50%',
@@ -69,16 +67,27 @@ const Transaction = () => {
                 </Col>
                 <Col xs={4}>
                    <div className='employee-div'>
+                   <Table striped bordered hover>
+                   <thead>
+                    <tr>
+                     
+                      <th>Item</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                    </tr>
+                  </thead>
                       {cart && cart.cart && cart.cart.map(item => {
                         return(
-                          <div className='cart-item'>
-                            <h3>{item.productName}</h3>
-                            <h3>{item.quantity}</h3>
-                            <h3>${item.price}</h3>
-                          </div>
+                          <tr>
+                            <td className='td'>{item.name}</td>
+                            <td className='td'>{item.price}</td>
+                            <td className='td'>{item.qty}</td>
+                          </tr>
                         )
                       })}
+                    </Table>
                    </div>
+                   <Link to ='/shops/:shopId/transaction'><Button >To Invoice</Button></Link>
                 </Col>
             </Row>
         </div>

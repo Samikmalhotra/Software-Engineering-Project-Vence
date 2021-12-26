@@ -8,7 +8,7 @@ import {
     GET_TRANSACTIONS_BY_SHOP_ID_ERROR,
     CREATE_TRANSACTION,
     CREATE_TRANSACTION_ERROR,
-} from "../types";
+} from "./types";
 
 
 export const getTransactionById = (token, id) => async dispatch => {

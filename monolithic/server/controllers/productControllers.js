@@ -23,7 +23,7 @@ const getProductById = asyncHandler(async (req,res) => {
         res.status(404)
         throw new Error('Product not found')
     }
-    res.json(products)
+    res.json(product)
 })
 
 // @desc    Delete a product
@@ -39,7 +39,6 @@ const deleteProduct = asyncHandler(async (req,res) => {
         res.status(404)
         throw new Error('Product not found')
     }
-    res.json(products)
 })
 
 // @desc    Create a product

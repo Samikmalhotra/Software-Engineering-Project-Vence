@@ -11,7 +11,7 @@ export const addToCart = (token, id, qty) => async (dispatch, getState) => {
         }
       }
       try {
-        const { data } = await axios.get(proxy+`/api/products/${id}`,config)
+        const { data } = await axios.get(proxy+`/api/products/prod/${id}`,config)
         console.log(data)
         dispatch({
           type: CART_ADD_ITEM,

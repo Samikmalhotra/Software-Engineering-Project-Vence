@@ -27,3 +27,9 @@
     float: right;
     margin-right: 2vw;
 }
+.employee-div .td{
+    text-transform: capitalize;
+}
+.employee-div{
+    overflow-y: scroll;
+}
