@@ -48,6 +48,17 @@ const FinalTransaction = ({ history }) => {
 //     // eslint-disable-next-line
 //   }, [history, success])
 
+const printDiv = (divName) => {
+  var printContents = document.getElementById(divName).innerHTML;
+  var originalContents = document.body.innerHTML;
+
+  document.body.innerHTML = printContents;
+
+  window.print();
+
+  document.body.innerHTML = originalContents;
+}
+
   const placeOrderHandler = () => {
     dispatch(
       createTransaction(
@@ -63,7 +74,7 @@ const FinalTransaction = ({ history }) => {
   }
 
   return (
-    <>
+    <div className='printableArea'>
       {/* <CheckoutSteps step1 step2 step3 step4 /> */}
       <Row>
         <Col md={8}>
@@ -159,12 +170,26 @@ const FinalTransaction = ({ history }) => {
                 >
                   Transaction
                 </Button>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <Button
+                  type='button'
+                  className='btn-block'
+                  onClick={() => window.print()}
+                >
+                  Print
+                </Button>
               </ListGroup.Item>
             </ListGroup>
           </Card>
+          <br/>
+          <Link to={"/"+params.shopId+"/transactions"}><Button>Past Transactions</Button></Link>
         </Col>
       </Row>
-    </>
+    </div>
   )
 }
 

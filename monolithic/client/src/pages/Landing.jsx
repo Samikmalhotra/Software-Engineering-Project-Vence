@@ -54,7 +54,7 @@ const Landing = () => {
   
       <div class="bottom-container">
         <h2 class="bottom-heading">Still doing your Inventory <br/> Management on Excel?</h2>
-        <a class="bottom-button" href=''>START USING FOR FREE</a>
+        <a class="bottom-button" href='/signup'>START USING FOR FREE</a>
         <div class="footer">
           <p class="rights">© 2021 Team- Zeus</p>
         </div>
