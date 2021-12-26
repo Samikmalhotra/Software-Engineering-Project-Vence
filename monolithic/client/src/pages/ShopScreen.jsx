@@ -68,6 +68,11 @@ const ShopScreen = () => {
                       })}
                     </div>
                 </Col>
+                <Col xs={4}>
+                   <div className='employee-div'>
+
+                   </div>
+                </Col>
             </Row>
         </div>
     )

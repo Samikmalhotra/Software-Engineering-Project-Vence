@@ -1,9 +1,19 @@
 .product-div{
-    margin: 5%;
+    margin: 3.5vh;
     background-color: #fff;
     min-height: 68vh;
     border-radius: 20px;
     filter: drop-shadow(2px 2px 6px #1a191962);
+    margin-top: 5vh;
+}
+.employee-div{
+    margin: 3.5vh;
+    background-color: #fff;
+    min-height: 68vh;
+    border-radius: 20px;
+    filter: drop-shadow(2px 2px 6px #1a191962);
+    margin-top: 5vh;
+    margin-left: 2vw;
 }
 .shopscreen h1{
     width: 70%;

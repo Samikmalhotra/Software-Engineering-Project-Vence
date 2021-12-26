@@ -26,7 +26,7 @@ const style = {
     p: 4,
   };
 
-const ShopScreen = () => {
+const Transaction = () => {
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -35,6 +35,7 @@ const ShopScreen = () => {
     const params = useParams();
     const dispatch = useDispatch()
     const auth = useSelector(state => state.auth)
+    const cart = useSelector(state => state.cart)
     const shopState = useSelector(state => state.shop)
     const productState = useSelector(state => state.product)
 
@@ -61,14 +62,27 @@ const ShopScreen = () => {
                     <div className="product-div">
                       {productState && productState.products && productState.products.map(prod => {
                         return(
-                          <Product product={prod}/>
+                          <Product product={prod} token={auth.token}/>
                         )
                       })}
                     </div>
+                </Col>
+                <Col xs={4}>
+                   <div className='employee-div'>
+                      {cart && cart.cart && cart.cart.map(item => {
+                        return(
+                          <div className='cart-item'>
+                            <h3>{item.productName}</h3>
+                            <h3>{item.quantity}</h3>
+                            <h3>${item.price}</h3>
+                          </div>
+                        )
+                      })}
+                   </div>
                 </Col>
             </Row>
         </div>
     )
 }
 
-export default ShopScreen
+export default Transaction

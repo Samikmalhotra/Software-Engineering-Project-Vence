@@ -18,3 +18,9 @@
 .product-card .card-img{
     height: 170px;
 }
+.input-qty{
+    width: 30%;
+}
+.product-card-link:hover{
+    transform: scale(1);
+}
