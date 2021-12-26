@@ -44,7 +44,7 @@ const ShopScreen = () => {
     }, [dispatch, auth.token, params.shopId])
     return (
         <div className="shopscreen">
-            <Link to="/newtransaction"><Button >New Transaction</Button></Link>
+            <Link to={"/shops/"+params.shopId+"/generateinvoice"}><Button >New Transaction</Button></Link>
             <Button onClick={handleOpen}>Add Product</Button>
             <h1>{shopState && shopState.shop && shopState.shop.name}</h1>
                   

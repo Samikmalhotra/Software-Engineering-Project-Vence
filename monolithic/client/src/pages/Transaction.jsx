@@ -44,8 +44,6 @@ const ShopScreen = () => {
     }, [dispatch, auth.token, params.shopId])
     return (
         <div className="shopscreen">
-            <Link to="/"><Button >New Transaction</Button></Link>
-            <Button onClick={handleOpen}>Add Product</Button>
             <h1>{shopState && shopState.shop && shopState.shop.name}</h1>
                   
       <Modal

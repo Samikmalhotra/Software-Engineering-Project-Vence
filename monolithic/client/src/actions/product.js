@@ -117,9 +117,10 @@ export const deleteProduct = (token, id) => async dispatch => {
             payload: res.data
         });
     } catch (error) {
-        dispatch({
-            type: DELETE_PRODUCT_ERROR,
-            payload: error.response && error.response.data.error
-        });
+        // dispatch({
+        //     type: DELETE_PRODUCT_ERROR,
+        //     payload: error.response && error.response.data.error
+        // });
+        // dispatch(getAllProducts(token))
     }
 }

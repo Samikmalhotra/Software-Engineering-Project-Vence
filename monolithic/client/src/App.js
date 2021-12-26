@@ -10,6 +10,7 @@ import SignupScreen from './pages/Signup';
 import Shops from './pages/Shops';
 import ShopScreen from './pages/ShopScreen';
 import ShopScreenAdmin from './pages/ShopScreenAdmin';
+import Transaction from './pages/Transaction'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path = 'signup' element={<SignupScreen/>}/>
             <Route path = 'shops' element={<Shops/>}/>
             <Route path = 'shops/:shopId' element={<ShopScreen/>}/>
+            <Route path = 'shops/:shopId/generateinvoice' element={<Transaction/>}/>
             <Route path = "admin" element={<ShopScreenAdmin/>}/>
 
           </Routes>

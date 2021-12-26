@@ -2,7 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 import '../css/product.css'
+import { deleteProduct } from '../actions/product'
+import { useSelector } from 'react-redux'
+import { Button } from 'react-bootstrap'
 const Product = ({ product }) => {
+
+  const auth = useSelector(state => state.auth)
   return (
     <Card className='my-3 p-3 rounded product-card'>
       {/* <Link to={`/product/${product._id}`}> */}
@@ -20,7 +25,7 @@ const Product = ({ product }) => {
 
         <Card.Text as='h3'>${product.price}</Card.Text>
         <Card.Text as='h5'>In Stock: {product.countInStock}</Card.Text>
-
+        <Button onClick={deleteProduct(auth.token, product._id)}>Delete</Button>
       </Card.Body>
     </Card>
   )
