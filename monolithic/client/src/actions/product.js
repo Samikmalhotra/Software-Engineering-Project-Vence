@@ -70,6 +70,7 @@ export const createProduct = (token, shopId, name, price, description, category,
             payload: res.data
         });
         dispatch(getAllProducts(token, shopId));
+        window.location.reload();
     } catch (error) {
         dispatch({
             type: CREATE_PRODUCT_ERROR,

@@ -77,7 +77,7 @@ useEffect(() => {
       </div>
       <div class="login slide-up">
 		<div class="center">
-			<h2 class="form-title" id="login"><span>or</span>Sign Up</h2>
+    <Link to = "/signup" ><h2 class="form-title" id="login"><span>or</span>Sign Up</h2></Link>
 		</div>
 	</div>
       {/* <Row className='py-3'>

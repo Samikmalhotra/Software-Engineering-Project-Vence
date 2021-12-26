@@ -84,7 +84,7 @@ const SignupScreen = () => {
       </div>
       <div class="login slide-up">
 		<div class="center">
-			<h2 class="form-title" id="login"><span>Already signed up?</span>Login</h2>
+			<Link to = "/login" ><h2 class="form-title" id="login"><span>Already signed up?</span>Login</h2></Link>
 		</div>
 	</div>
     </div>
