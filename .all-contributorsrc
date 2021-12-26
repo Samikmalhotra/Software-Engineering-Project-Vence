@@ -30,6 +30,16 @@
         "content",
         "ideas"
       ]
+    },
+    {
+      "login": "GurleenKaur22",
+      "name": "Gurleen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/79988919?v=4",
+      "profile": "https://github.com/GurleenKaur22",
+      "contributions": [
+        "code",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
