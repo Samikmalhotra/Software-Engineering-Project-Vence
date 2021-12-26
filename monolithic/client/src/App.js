@@ -14,7 +14,7 @@ import Transaction from './pages/Transaction'
 import FinalTransaction from './pages/FinalTransaction';
 import AboutUs from './pages/AboutUs';
 import TransactionsList from './pages/TransactionsList';
-
+import PrivateRoute from './components/PrivateRoute';
 function App() {
   return (
     <div className="App">
@@ -33,7 +33,6 @@ function App() {
             <Route path = 'shops/:shopId/generateinvoice' element={<Transaction/>}/>
             <Route path = "shops/:shopId/transaction" element={<FinalTransaction/>}/>
             <Route path = "admin" element={<ShopScreenAdmin/>}/>
-
           </Routes>
           
 

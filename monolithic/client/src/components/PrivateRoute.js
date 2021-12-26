@@ -1,16 +1,16 @@
 import React,{useEffect} from 'react'
 import { useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useNavigate } from 'react-router-dom'
 
 const PrivateRoute = ({children}) => {
     const auth = useSelector(state => state.auth)
-    const history = useHistory()
+    const navigate = useNavigate()
 
     useEffect(() => {if(!auth.isAuthenticated){
-        history.push('/login')
+        navigate('/login')
     }},[])
     if(!auth.isAuthenticated){
-        history.push('/login')
+        navigate('/login')
     }
     return (
         {children}
